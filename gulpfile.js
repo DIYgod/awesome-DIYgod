@@ -18,6 +18,8 @@ gulp.task('browser-sync', function() {
 
 // Copy html files
 gulp.task('copyHTML', function () {
+    gulp.src(['node_modules/balloon-css/**'])
+        .pipe(gulp.dest('lib/balloon-css'));
     gulp.src('src/*.html')
         .pipe(gulp.dest('dist'))
         .pipe(browserSync.stream());
